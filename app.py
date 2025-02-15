@@ -35,7 +35,7 @@ similarities = load_joblib(SIMILARITIES_URL)
 movies = pd.DataFrame(movies_list)
 
 # OMDB API key
-OMDB_API_KEY = " http://www.omdbapi.com/?i=tt3896198&apikey=9e503a3d"
+OMDB_API_KEY = "9e503a3d"
 
 def fetch_poster(title):
     url = f"http://www.omdbapi.com/?t={title}&apikey={OMDB_API_KEY}"
