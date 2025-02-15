@@ -11,8 +11,14 @@ SIMILARITIES_URL = "https://drive.google.com/file/d/1dr6Isu71xnyCyoDdRDaAjzZUcMn
 # Function to download and load joblib files
 @st.cache_data()
 def load_joblib(url):
-    output = url.split("=")[-1] + ".joblib"
+    output = url.split("/")[-2] + ".joblib"  # Extract the file ID and create a filename
     gdown.download(url, output, quiet=False)
+
+    # Check if the file is actually downloaded
+    if not os.path.exists(output):
+        st.error(f"Failed to download {output}. Please check the Google Drive link.")
+        return None
+
     return joblib.load(output)
 
 # Load data
