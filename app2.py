@@ -65,7 +65,7 @@ st.sidebar.write(
     "📦 Data is fetched from a pre-trained model and movie details come from **OMDb API**."
 )
 st.sidebar.markdown("---")
-st.sidebar.write("📌 **Created by Noureen**")
+st.sidebar.write("📌 **Created by Noureen AC**")
 
 # Main UI
 st.title("🎬 Movie Recommendation System")
