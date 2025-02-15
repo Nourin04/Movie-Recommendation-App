@@ -13,8 +13,10 @@ SIMILARITIES_URL = "https://drive.google.com/file/d/1iUp9RhiNwkq8mQgdWTckrn8pZCT
 def load_pickle(url):
     output = url.split("=")[-1] + ".pkl"
     gdown.download(url, output, quiet=False)
+    
     with open(output, "rb") as f:
-        return pickle.load(f)
+        return pickle.load(f, encoding="latin1")  # Fix compatibility issue
+
 
 # Load data
 movies_list = load_pickle(MOVIES_LIST_URL)
