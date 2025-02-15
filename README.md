@@ -23,6 +23,12 @@ The project leverages **pre-trained models**, **Google Drive-hosted data**, and 
 
 ---
 
+
+##  **LINK TO DATASET**  
+https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies.csv 
+
+---
+
 ## 📂 **Project Structure**  
 
 ```
