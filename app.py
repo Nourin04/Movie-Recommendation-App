@@ -6,8 +6,8 @@ import gdown
 import os
 
 # Google Drive direct download links
-MOVIES_LIST_URL = "https://drive.google.com/file/d/1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB/view?usp=sharing"
-SIMILARITIES_URL = "https://drive.google.com/file/d/1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd/view?usp=sharing"
+MOVIES_LIST_URL = "https://drive.google.com/uc?id=1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB"
+SIMILARITIES_URL = "https://drive.google.com/uc?id=1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd"
 
 # Function to download and load joblib files
 import joblib
