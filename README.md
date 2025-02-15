@@ -124,6 +124,6 @@ pip install streamlit pandas joblib requests gdown
 ---
 
 ## 📧 **Contact**  
-🔹 **GitHub:** [YourUsername](https://github.com/Nourin04)  
+🔹 **GitHub:** https://github.com/Nourin04 
 🔹 **Email:** nourinnn1823@gmail.com  
 
