@@ -3,23 +3,29 @@ import joblib
 import pandas as pd
 import requests
 import gdown
+import os
 
 # Google Drive direct download links
 MOVIES_LIST_URL = "https://drive.google.com/file/d/1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB/view?usp=sharing"
 SIMILARITIES_URL = "https://drive.google.com/file/d/1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd/view?usp=sharing"
 
 # Function to download and load joblib files
+import joblib
+import gdown
+import os
+
 @st.cache_data()
 def load_joblib(url):
     output = url.split("/")[-2] + ".joblib"  # Extract the file ID and create a filename
     gdown.download(url, output, quiet=False)
 
-    # Check if the file is actually downloaded
+    # ✅ Check if the file is actually downloaded
     if not os.path.exists(output):
         st.error(f"Failed to download {output}. Please check the Google Drive link.")
         return None
 
     return joblib.load(output)
+
 
 # Load data
 movies_list = load_joblib(MOVIES_LIST_URL)
