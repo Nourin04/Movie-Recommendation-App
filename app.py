@@ -1,31 +1,28 @@
 import streamlit as st
-import pickle
+import joblib
 import pandas as pd
 import requests
 import gdown
 
-# Google Drive links for pickle files
-MOVIES_LIST_URL = "https://drive.google.com/file/d/13v9lWU2aUn3L6tY8_NImOY9WIEuIahNX/view?usp=drive_link"
-SIMILARITIES_URL = "https://drive.google.com/file/d/1iUp9RhiNwkq8mQgdWTckrn8pZCTY1Kyr/view?usp=sharing"
+# Google Drive direct download links
+MOVIES_LIST_URL = "https://drive.google.com/file/d/1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB/view?usp=sharing"
+SIMILARITIES_URL = "https://drive.google.com/file/d/1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd/view?usp=sharing"
 
-# Function to download and load pickle files
+# Function to download and load joblib files
 @st.cache_data()
-def load_pickle(url):
-    output = url.split("=")[-1] + ".pkl"
+def load_joblib(url):
+    output = url.split("=")[-1] + ".joblib"
     gdown.download(url, output, quiet=False)
-    
-    with open(output, "rb") as f:
-        return pickle.load(f, encoding="latin1")  # Fix compatibility issue
-
+    return joblib.load(output)
 
 # Load data
-movies_list = load_pickle(MOVIES_LIST_URL)
-similarities = load_pickle(SIMILARITIES_URL)
+movies_list = load_joblib(MOVIES_LIST_URL)
+similarities = load_joblib(SIMILARITIES_URL)
 
 # Convert movies list to DataFrame
 movies = pd.DataFrame(movies_list)
 
-# OMDB API key for fetching posters
+# OMDB API key
 OMDB_API_KEY = " http://www.omdbapi.com/?i=tt3896198&apikey=9e503a3d"
 
 def fetch_poster(title):
