@@ -14,7 +14,8 @@ OMDB_API_KEY = "http://www.omdbapi.com/?i=tt3896198&apikey=9e503a3d"
 # Function to download large files from Google Drive
 def download_file(file_id, output):
     url = f"https://drive.google.com/uc?id={file_id}"
-    gdown.download(url, output, quiet=False)
+    os.system(f"wget '{url}' -O {output}")
+
 
 # Download and load movies.pkl
 movies_file = "movies.pkl"
