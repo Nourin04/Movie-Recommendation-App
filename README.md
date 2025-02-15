@@ -34,11 +34,11 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies
 ```
 movie-recommendation-app/
 │── 📂 src/
-│   ├── app.py                # Main Streamlit application
-│   ├── model.pkl             # Trained similarity model (Optional, stored in Google Drive)
+│   ├── app2.py                # Main Streamlit application
+│   ├── similarities.joblib             # Trained similarity model (Optional, stored in Google Drive)
 │   ├── movies_list.joblib     # Movie dataset (Stored in Google Drive)
 │── 📂 assets/
-│   ├── logo.png              # Logo (if applicable)
+│   
 │── 📜 requirements.txt        # List of required Python packages
 │── 📜 README.md              # Project documentation (this file)
 ```
