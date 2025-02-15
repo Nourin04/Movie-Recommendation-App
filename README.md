@@ -35,10 +35,8 @@ https://www.kaggle.com/datasets/tmdb/tmdb-movie-metadata?select=tmdb_5000_movies
 movie-recommendation-app/
 │── 📂 src/
 │   ├── app2.py                # Main Streamlit application
-│   ├── similarities.joblib             # Trained similarity model (Optional, stored in Google Drive)
-│   ├── movies_list.joblib     # Movie dataset (Stored in Google Drive)
-│── 📂 assets/
-│   
+│   ├── similarities.joblib    # Trained similarity model (Optional, stored in Google Drive)
+│   ├── movies_list.joblib     # Movie dataset (Stored in Google Drive) 
 │── 📜 requirements.txt        # List of required Python packages
 │── 📜 README.md              # Project documentation (this file)
 ```
