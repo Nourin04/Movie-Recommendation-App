@@ -5,6 +5,9 @@ import requests
 import gdown
 import os
 
+# ✅ Set page config at the very top before any Streamlit command
+st.set_page_config(page_title="🎬 Movie Recommender", layout="wide")
+
 # Google Drive direct download links
 MOVIES_LIST_URL = "https://drive.google.com/uc?id=1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB"
 SIMILARITIES_URL = "https://drive.google.com/uc?id=1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd"
@@ -12,13 +15,11 @@ SIMILARITIES_URL = "https://drive.google.com/uc?id=1dr6Isu71xnyCyoDdRDaAjzZUcMnv
 # Function to download and load joblib files
 @st.cache_data()
 def load_joblib(url):
-    output = url.split("/")[-2] + ".joblib"  # Extract the file ID and create a filename
+    output = url.split("/")[-2] + ".joblib"
     gdown.download(url, output, quiet=False)
-
     if not os.path.exists(output):
         st.error(f"❌ Failed to download {output}. Please check the Google Drive link.")
         return None
-
     return joblib.load(output)
 
 # Load data
@@ -55,9 +56,6 @@ def recommend(movie):
         posters.append(fetch_poster(title))
 
     return recommended_movies, posters
-
-# Streamlit UI with Sidebar
-st.set_page_config(page_title="🎬 Movie Recommender", layout="wide")
 
 # Sidebar with app info
 st.sidebar.title("ℹ️ About the App")
