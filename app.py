@@ -9,6 +9,24 @@ import os
 MOVIES_LIST_URL = "https://drive.google.com/uc?id=1jWPuvch2G4O3WwRf5Tecsh71hsrtO8OB"
 SIMILARITIES_URL = "https://drive.google.com/uc?id=1dr6Isu71xnyCyoDdRDaAjzZUcMnvU-fd"
 
+# Function to set background image
+def set_background(image_url):
+    """Set a full-screen background image using CSS."""
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background: url("{image_url}") no-repeat center center fixed;
+            background-size: cover;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+# Set background image (replace with your image URL)
+set_background("https://images.pexels.com/photos/5662857/pexels-photo-5662857.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")
+
 # Function to download and load joblib files
 import joblib
 import gdown
